@@ -21,7 +21,7 @@ class Stock extends Component {
     // console.log(pointerToThis);
 
     const API_KEY = process.env.REACT_STOCK_API_KEY;
-    let StockSymbol = "FB";
+    let StockSymbol = "GOOGL";
     let API_call = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${StockSymbol}&outputsize=full&apikey=${API_KEY}`;
 
     let stockChartXValuesFunction = [];
