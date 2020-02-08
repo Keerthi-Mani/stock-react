@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Plot from "react-plotly.js";
 
 class Stock extends Component {
   constructor(props) {
@@ -16,6 +17,9 @@ class Stock extends Component {
 
   //API CALL
   fetchStock() {
+    const pointerToThis = this;
+    console.log(pointerToThis);
+
     const API_KEY = process.env.REACT_STOCK_API_KEY;
     let StockSymbol = "FB";
     let API_call = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY_ADJUSTED&symbol=${StockSymbol}&outputsize=full&apikey=${API_KEY}`;
@@ -30,18 +34,18 @@ class Stock extends Component {
       .then(function(data) {
         console.log(data);
 
-        for (var key in data["Time Series (Daily"]) {
+        for (var key in data["Time Series (Daily)"]) {
           //Display Date in X-axis
           stockChartXValuesFunction.push(key);
           //Dispaly Open Rate in Y-axis
           stockChartYValuesFunction.push(
-            data["Time Series (Daily"][key]["1. open"]
+            data["Time Series (Daily)"][key]["1. open"]
           );
         }
         console.log(stockChartXValuesFunction);
         console.log(stockChartYValuesFunction);
 
-        this.setState({
+        pointerToThis.setState({
           stockChartXValues: stockChartXValuesFunction,
           stockChartYValues: stockChartXValuesFunction
         });
@@ -54,6 +58,20 @@ class Stock extends Component {
         <h1>
           <strong>Stock Market</strong>
         </h1>
+        <Plot
+          data={[
+            {
+              x: this.state.stockChartXValues,
+              y: this.state.stockChartYValues,
+              type: "scatter",
+              mode: "lines+markers",
+              marker: {
+                color: "red"
+              }
+            }
+          ]}
+          layout={{ width: 720, height: 440, title: "A Fancy Plot" }}
+        />
       </div>
     );
   }
