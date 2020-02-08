@@ -111,3 +111,8 @@ class App extends Component {
 ```
 
 You should see a plot like this:
+<img width="743" alt="Screen Shot 2020-02-07 at 8 51 40 PM" src="https://user-images.githubusercontent.com/52920074/74077500-23ce7b00-49ee-11ea-91c5-ab2e63aef6d8.png">
+
+## Stock Symbols
+
+<img width="413" alt="Screen Shot 2020-02-07 at 8 56 10 PM" src="https://user-images.githubusercontent.com/52920074/74077502-25983e80-49ee-11ea-8121-1a1c3dd27c51.png">
