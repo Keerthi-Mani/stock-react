@@ -116,3 +116,52 @@ You should see a plot like this:
 ## Stock Symbols
 
 <img width="413" alt="Screen Shot 2020-02-07 at 8 56 10 PM" src="https://user-images.githubusercontent.com/52920074/74077502-25983e80-49ee-11ea-8121-1a1c3dd27c51.png">
+
+## API Reference
+
+### TIME_SERIES_DAILY High Usage
+
+This API returns daily time series (date, daily open, daily high, daily low, daily close, daily volume) of the global equity specified, covering 20+ years of historical data.
+
+The most recent data point is the prices and volume information of the current trading day, updated realtime.
+
+### API Parameters
+
+- Required: function
+
+```
+The time series of your choice. In this case, function=TIME_SERIES_DAILY
+```
+
+- Required: symbol
+
+```
+The name of the equity of your choice. For example: symbol=MSFT
+```
+
+- Optional: outputsize
+
+By default, outputsize=compact. Strings compact and full are accepted with the following specifications: compact returns only the latest 100 data points; full returns the full-length time series of 20+ years of historical data. The "compact" option is recommended if you would like to reduce the data size of each API call.
+
+- Optional: datatype
+
+By default, datatype=json. Strings json and csv are accepted with the following specifications: json returns the daily time series in JSON format; csv returns the time series as a CSV (comma separated value) file.
+
+- Required: apikey
+
+Your API key. Claim your free API key here.
+
+<img width="749" alt="Screen Shot 2020-02-07 at 9 14 04 PM" src="https://user-images.githubusercontent.com/52920074/74077599-0948d180-49ef-11ea-8b50-350d9aceec71.png">
+### Examples (click for JSON output)
+
+```
+https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=demo
+
+https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&outputsize=full&apikey=demo
+```
+
+### Downloadable CSV file:
+
+```
+https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=demo&datatype=csv
+```
