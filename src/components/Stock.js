@@ -9,6 +9,16 @@ class Stock extends Component {
     };
   }
 
+  //React Lifecycle Method
+  componentDidMount() {
+    this.fetchStock();
+  }
+
+  //API CALL
+  fetchStock() {
+    const API_KEY = process.env.REACT_STOCK_API_KEY;
+  }
+
   render() {
     return (
       <div>
