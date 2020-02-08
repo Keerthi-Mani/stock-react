@@ -74,3 +74,40 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 ```
 $ npm install react-plotly.js plotly.js
 ```
+
+# Quick start
+
+The easiest way to use this component is to import and pass data to a plot component:
+
+```
+import React,{Component} from 'react';
+import Plot from 'react-plotly.js';
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <h1>
+          <strong>Stock Market</strong>
+        </h1>
+        <Plot
+          data={[
+            {
+              x: this.state.stockChartXValues,
+              y: this.state.stockChartYValues,
+              type: "scatter",
+              mode: "lines+markers",
+              marker: {
+                color: "red"
+              }
+            }
+          ]}
+          layout={{ width: 720, height: 440, title: "A Fancy Plot" }}
+        />
+      </div>
+    );
+  }
+}
+```
+
+You should see a plot like this:
