@@ -18,7 +18,7 @@ class Stock extends Component {
   //API CALL
   fetchStock() {
     const pointerToThis = this;
-    console.log(pointerToThis);
+    // console.log(pointerToThis);
 
     const API_KEY = process.env.REACT_STOCK_API_KEY;
     let StockSymbol = "FB";
@@ -32,7 +32,7 @@ class Stock extends Component {
         return res.json();
       })
       .then(function(data) {
-        console.log(data);
+        // console.log(data);
 
         for (var key in data["Time Series (Daily)"]) {
           //Display Date in X-axis
@@ -42,8 +42,8 @@ class Stock extends Component {
             data["Time Series (Daily)"][key]["1. open"]
           );
         }
-        console.log(stockChartXValuesFunction);
-        console.log(stockChartYValuesFunction);
+        // console.log(stockChartXValuesFunction);
+        // console.log(stockChartYValuesFunction);
 
         pointerToThis.setState({
           stockChartXValues: stockChartXValuesFunction,
