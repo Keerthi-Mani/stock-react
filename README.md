@@ -165,3 +165,7 @@ https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&outputs
 ```
 https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=MSFT&apikey=demo&datatype=csv
 ```
+
+## License
+
+MIT Licensed Copyright (c) 2020 Keerthi Mani
